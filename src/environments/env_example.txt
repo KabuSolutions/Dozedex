@@ -1,0 +1,6 @@
+#Devem ser criados 2 arquivos 'environment.development.ts' e 'environment.ts', com o seguinte código:
+
+export const environment = {
+    api: '', #Endpoin da API
+    jwt_token: '' #Token JWT gerado
+};
