@@ -1,3 +1,9 @@
 <tr *ngFor="let guild of Guilds">
     <td> {{guild.Name}} </td>
 </tr>
+
+<div *ngIf="Guild">
+    <h1>Guilda</h1>
+    <p>Nome: {{Guild.Name}}</p>
+    <p>ShortDescription: {{Guild.ShortDescription}}</p>
+</div>
