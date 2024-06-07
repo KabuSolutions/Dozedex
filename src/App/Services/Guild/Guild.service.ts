@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { IGuild } from "../../Interfaces/Components/Guild/IGuild";
-import { BaseService } from "../Base/BaseService";
+import { BaseService } from "../Base/Base.Service";
 import { IGuildService } from "../../Interfaces/Services/Guild/IGuildService";
 
 @Injectable({
