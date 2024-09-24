@@ -13,22 +13,33 @@
 }
 
 .icone{
-    animation: pulsar 1.0s infinite;
+    animation: pulsar 1.5s infinite;
     width: 30%;
     height: 50%;
+    border-radius: 20%;
 }
 
 @keyframes pulsar {
     0%{
         background: linear-gradient(rgb(110,50,150), rgb(198,19,18));
     }
-    50%,100%{
-        border: 5px solid white;
+    50%{
         background: linear-gradient(rgb(110,50,150),rgb(198,19,18));
         box-shadow: 0 0 5px rgb(110,50,150),
                     0 0 20px rgb(110,50,150),
                     0 0 50px rgb(110,50,150),
+    }
+    100% {
+        background: linear-gradient(rgb(110,50,150),rgb(198,19,18));
+        box-shadow: 0 0 100px rgb(110,50,150),
+                    0 0 250px rgb(110,50,150);
+    }
+    50% {
+        background: linear-gradient(rgb(110,50,150),rgb(198,19,18));
+        box-shadow: 0 0 250px rgb(110,50,150),
                     0 0 100px rgb(110,50,150),
-                    0 0 200px rgb(110,50,150);
+                    0 0 50px rgb(110,50,150),
+                    0 0 20px rgb(110,50,150),
+                    0 0 5px rgb(110,50,150);
     }
 }
