@@ -10,15 +10,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements SplashScreenComponent {
+export class AppComponent {
   title = 'dozedex';
-  showSplash: boolean = true;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.showSplash = !this.showSplash;
-    }, 3000);
-  }
 }
