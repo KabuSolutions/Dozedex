@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './splash-screen.component.css'
 })
 export class SplashScreenComponent {
-
+  showSplash: boolean = true;
 }
