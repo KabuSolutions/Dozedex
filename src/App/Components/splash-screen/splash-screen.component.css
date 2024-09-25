@@ -19,6 +19,12 @@
     border-radius: 20%;
 }
 
+.gif{
+    width: 30%;
+    height: 50%;
+    border-radius: 20%;
+}
+
 @keyframes pulsar {
     0%{
         background: linear-gradient(rgb(110,50,150), rgb(198,19,18));

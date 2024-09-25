@@ -10,8 +10,10 @@ import { Component } from '@angular/core';
 })
 export class SplashScreenComponent {
   showSplash: boolean = true;
+  showPulsant: boolean = true;
 
   ngOnInit(): void {
+
     setTimeout(() => {
       this.showSplash = !this.showSplash;
     }, 3000);
