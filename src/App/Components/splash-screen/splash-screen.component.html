@@ -1,8 +1,8 @@
 <body *ngIf = "showSplash">
     <div class="splash-screen" *ngIf="showPulsant">
-        <img src="Splash_Screen.png" class="icone">
+        <img src = "{{splashIcon}}"  class="icone">
     </div>
-    <div class="splash-screen" *ngIf="!showPulsant">
-        <img src="Splash_Screen.png" class="gif">
+    <div class="splash-screen" *ngIf="!showPulsant" >
+        <img src="{{splashIcon}}" class="gif">
     </div>
 </body>
