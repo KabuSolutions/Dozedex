@@ -17,19 +17,16 @@ export class SplashScreenComponent {
   extension: string = this.splashIcon.substring(this.splashIcon.length - 3);
   splashScreenService: SplashScreenServiceService = inject(SplashScreenServiceService);
 
-  public async ShowSplash() {
-    this.splashScreenService.GetTimeOut().then((ShowSplash: boolean) => {
-      this.showSplash = ShowSplash;
-    });
-  }
-
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     if (this.extension != "gif") {
       this.showPulsant = true;
     }
     else {
       this.showPulsant = false;
     }
-    this.ShowSplash();
+
+    await this.splashScreenService.GetTimeOut().then(SHowSplash => {
+      this.showSplash = SHowSplash
+    });
   }
 }
