@@ -2,15 +2,10 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SplashScreenComponent } from "../splash-screen/splash-screen.component";
 import { BaseService } from '../../Services/Base.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { SplashScreenInterceptor } from '../../Interceptors/splash-screen.interceptor';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: SplashScreenInterceptor, multi: true}
-  ],
   imports: [RouterModule, SplashScreenComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
