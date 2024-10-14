@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +10,7 @@ export class BaseService {
 
     public constructor (private http: HttpClient) {}
 
-    public GetTimeOut(): Observable<any> {
-        return this.http.get(this.url);
+    public GetTimeOut(): void {
+        this.http.get(this.url).subscribe();
     }
 }
