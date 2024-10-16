@@ -1,2 +1,12 @@
-<splash-screen></splash-screen>
-Aqui é o login!!
+<div *ngIf="GetLoadingStatus()">
+    <splash-screen ></splash-screen>
+</div>
+
+
+<div *ngIf="!GetLoadingStatus()">
+    Aqui é o login!!
+    <!-- <router-outlet></router-outlet> -->
+</div>
+
+<!-- <div *ngIf="!showSplash">
+</div> -->

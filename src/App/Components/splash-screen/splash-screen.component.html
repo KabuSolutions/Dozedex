@@ -1,8 +1,10 @@
-<ng-container *ngIf="this.splashScreenService.splashVisible$ | async">
+<!-- <ng-container *ngIf="this.splashScreenService.splashVisible$ | async"> -->
     <div class="splash-screen" *ngIf="showPulsant">
         <img src = "{{splashIcon}}"  class="icone">
     </div>
     <div class="splash-screen" *ngIf="!showPulsant" >
         <img src="{{splashIcon}}" class="gif">
     </div>
-</ng-container>
+
+    
+<!-- </ng-container> -->
