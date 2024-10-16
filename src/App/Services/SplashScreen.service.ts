@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SplashScreenService {
-  private splashVisible = new BehaviorSubject<boolean>(true);
+  private splashVisible = new BehaviorSubject<boolean>(false);
 
-  public get splashVisible$() {
-    return this.splashVisible.asObservable();
-  }
+  public splashVisible$: Observable<boolean> = this.splashVisible.asObservable();
 
   public hideSplash() {
     this.splashVisible.next(false);

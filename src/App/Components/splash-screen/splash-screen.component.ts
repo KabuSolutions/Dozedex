@@ -16,10 +16,7 @@ export class SplashScreenComponent {
   public splashIcon: string = enviroment.SplashIcon;
   public extension: string = this.splashIcon.substring(this.splashIcon.length - 3);
 
-  constructor(private splashScreenService: SplashScreenService) { 
-    this.splashScreenService.splashVisible$.subscribe((isVisible) => {
-      this.showSplash = isVisible;
-    });
+  constructor(public splashScreenService: SplashScreenService) { 
   }
 
   ngOnInit(): void {

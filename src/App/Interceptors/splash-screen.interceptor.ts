@@ -1,15 +1,27 @@
-import { HttpHandlerFn, HttpRequest } from "@angular/common/http";
-import { inject } from "@angular/core";
+import { HttpEvent, HttpHandler, HttpHandlerFn, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { SplashScreenService } from "../Services/SplashScreen.service";
-import { finalize } from "rxjs";
+import { finalize, Observable } from "rxjs";
 
-export function SplashScreenInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
-  const splashScreenService = inject(SplashScreenService);
-  splashScreenService.showSplash();
-  
-  return next(req).pipe(
-    finalize(() => {
-      splashScreenService.hideSplash();
-    })
-  );
+@Injectable()
+export class SplashScreenInterceptor implements HttpInterceptor {
+  private activeReq: number = 0;
+
+  public constructor(private splashScreenService: SplashScreenService) { }
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if(this.activeReq ==0) {
+      this.splashScreenService.showSplash();
+    }
+    this.activeReq++;
+
+    return next.handle(req).pipe(
+      finalize(() => {
+        this.activeReq--;
+        if(this.activeReq == 0) {
+          this.splashScreenService.hideSplash();
+        }
+      })
+    );
+  }
 }
